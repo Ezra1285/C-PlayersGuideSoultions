@@ -4,8 +4,9 @@
 // arrayStuff();
 // level12_TheReplicatorofDTo();
 // usingMatrix();
-level13_countDown(10);
+// level13_countDown(10);
 // level14_huntingTheManticore();
+level16_simulasTest();
 
 
 
@@ -118,6 +119,34 @@ static void level14_huntingTheManticore() {
     }
 
 }
+
+void level16_simulasTest() {
+    boxState current_state = boxState.Locked;
+    while (true) {
+        Console.Write($"The chest is {current_state}. What would you like to do: ");
+        string user_input = Console.ReadLine().ToLower();
+        if (user_input == "lock") {
+            current_state = boxState.Locked;
+        } 
+        else if (user_input == "unlock") {
+            current_state = boxState.Unlocked;
+        } 
+        else if (user_input == "open") {
+            current_state = boxState.Open;
+            break;
+        } 
+        else if (user_input == "close") {
+            current_state = boxState.Closed;
+        } 
+        else {
+            Console.WriteLine("Please enter a vaild choice (open, close, lock, unlock)");
+            continue;
+        }
+    }
+    Console.WriteLine("You have found the treasure");
+}
+
+enum boxState {Open, Closed, Locked, Unlocked}
 
 
 
