@@ -1,5 +1,13 @@
 ﻿
-using System;
+
+// hello_world();
+// arrayStuff();
+// level12_TheReplicatorofDTo();
+// usingMatrix();
+level13_countDown(10);
+// level14_huntingTheManticore();
+
+
 
 static void hello_world() {
     Console.BackgroundColor = ConsoleColor.Green;
@@ -69,20 +77,6 @@ static int level13_countDown(int count) {
     return level13_countDown(--count);
 }
 
-/***
-•Run the game in a loop until either the Manticore’s or city’s health reaches 0.
-•Before the second player’s turn, display the round number, the city’s health, and the Manticore’s
-health.
-•Compute how much damage the cannon will deal this round: 10 points if the round number is a
-multiple of both 3 and 5, 3 if it is a multiple of 3 or 5 (but not both), and 1 otherwise. Display this to
-the player.
-•Get a target range from the second player, and resolve its effect. Tell the user if they overshot (too
-far), fell short, or hit the Manticore. If it was a hit, reduce the Manticore’s health by the expected
-amount.
-•If the Manticore is still alive, reduce the city’s health by 1.
-•Advance to the next round.
-•When the Manticore or the city’s health reaches 0, end the game and display the outcome.
-***/
 static int determineDamage(int round_number) {
     if (round_number % 3 == 0 && round_number % 5 == 0) return 10;
     if (round_number % 3 == 0) return 3;
@@ -125,15 +119,5 @@ static void level14_huntingTheManticore() {
 
 }
 
-static void Main() {
-    // hello_world();
-    // arrayStuff();
-    // level12_TheReplicatorofDTo();
-    // usingMatrix();
-    // level13_countDown(10);
-    level14_huntingTheManticore();
-}
-
-Main();
 
 
